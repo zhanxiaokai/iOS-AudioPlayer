@@ -7,16 +7,29 @@
 //
 
 #import "ViewController.h"
-
-@interface ViewController ()
-
-@end
+#import "CommonUtil.h"
+#import "AudioPlayer.h"
 
 @implementation ViewController
-
+{
+    AudioPlayer*            _audioPlayer;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+}
+- (IBAction)play:(id)sender {
+    NSLog(@"Play Music...");
+    NSString* filePath = [CommonUtil bundlePath:@"131.aac"];
+    _audioPlayer = [[AudioPlayer alloc] initWithFilePath:filePath];
+    [_audioPlayer start];
+}
+
+- (IBAction)stop:(id)sender {
+    NSLog(@"Stop Music...");
+    if(_audioPlayer) {
+         [_audioPlayer stop];
+    }
 }
 
 
