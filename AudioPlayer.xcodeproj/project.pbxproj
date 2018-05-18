@@ -18,7 +18,6 @@
 		18768F641E4DAF3800133B6C /* libffmpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18768F591E4DAF3800133B6C /* libffmpeg.a */; };
 		18768F651E4DAF3800133B6C /* accompany_decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18768F5B1E4DAF3800133B6C /* accompany_decoder.cpp */; };
 		18768F661E4DAF3800133B6C /* accompany_decoder_controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18768F5D1E4DAF3800133B6C /* accompany_decoder_controller.cpp */; };
-		18768F671E4DAF3800133B6C /* 131.aac in Resources */ = {isa = PBXBuildFile; fileRef = 18768F601E4DAF3800133B6C /* 131.aac */; };
 		18768F681E4DAF3800133B6C /* CommonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 18768F631E4DAF3800133B6C /* CommonUtil.m */; };
 		18768F6F1E4DAFCB00133B6C /* AVAudioSession+RouteUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 18768F6C1E4DAFCB00133B6C /* AVAudioSession+RouteUtils.m */; };
 		18768F701E4DAFCB00133B6C /* ELAudioSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 18768F6E1E4DAFCB00133B6C /* ELAudioSession.m */; };
@@ -27,6 +26,8 @@
 		18768F7A1E4DB9BE00133B6C /* AudioOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 18768F791E4DB9BE00133B6C /* AudioOutput.m */; };
 		18768F7F1E4DBC3B00133B6C /* packet_pool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18768F7B1E4DBC3B00133B6C /* packet_pool.cpp */; };
 		18768F801E4DBC3B00133B6C /* packet_queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18768F7D1E4DBC3B00133B6C /* packet_queue.cpp */; };
+		34A35F6B20AF196F0030216A /* 131.aac in Resources */ = {isa = PBXBuildFile; fileRef = 34A35F6A20AF18E00030216A /* 131.aac */; };
+		34A35F6D20AF1D900030216A /* 111.aac in Resources */ = {isa = PBXBuildFile; fileRef = 34A35F6C20AF1D8D0030216A /* 111.aac */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,7 +143,6 @@
 		18768F5C1E4DAF3800133B6C /* accompany_decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = accompany_decoder.h; sourceTree = "<group>"; };
 		18768F5D1E4DAF3800133B6C /* accompany_decoder_controller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = accompany_decoder_controller.cpp; sourceTree = "<group>"; };
 		18768F5E1E4DAF3800133B6C /* accompany_decoder_controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = accompany_decoder_controller.h; sourceTree = "<group>"; };
-		18768F601E4DAF3800133B6C /* 131.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = 131.aac; sourceTree = "<group>"; };
 		18768F621E4DAF3800133B6C /* CommonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtil.h; sourceTree = "<group>"; };
 		18768F631E4DAF3800133B6C /* CommonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtil.m; sourceTree = "<group>"; };
 		18768F6B1E4DAFCB00133B6C /* AVAudioSession+RouteUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVAudioSession+RouteUtils.h"; sourceTree = "<group>"; };
@@ -158,6 +158,8 @@
 		18768F7C1E4DBC3B00133B6C /* packet_pool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = packet_pool.h; sourceTree = "<group>"; };
 		18768F7D1E4DBC3B00133B6C /* packet_queue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = packet_queue.cpp; sourceTree = "<group>"; };
 		18768F7E1E4DBC3B00133B6C /* packet_queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = packet_queue.h; sourceTree = "<group>"; };
+		34A35F6A20AF18E00030216A /* 131.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = 131.aac; sourceTree = "<group>"; };
+		34A35F6C20AF1D8D0030216A /* 111.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = 111.aac; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -430,7 +432,8 @@
 		18768F5F1E4DAF3800133B6C /* resource */ = {
 			isa = PBXGroup;
 			children = (
-				18768F601E4DAF3800133B6C /* 131.aac */,
+				34A35F6C20AF1D8D0030216A /* 111.aac */,
+				34A35F6A20AF18E00030216A /* 131.aac */,
 			);
 			path = resource;
 			sourceTree = "<group>";
@@ -539,7 +542,7 @@
 				TargetAttributes = {
 					18768ECC1E4DACDB00133B6C = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = MY5GTD35UJ;
+						DevelopmentTeam = U4BCBA6SZN;
 						ProvisioningStyle = Automatic;
 					};
 					18768EE51E4DACDB00133B6C = {
@@ -584,7 +587,8 @@
 				18768EE01E4DACDB00133B6C /* LaunchScreen.storyboard in Resources */,
 				18768F041E4DAD0E00133B6C /* ViewController.xib in Resources */,
 				18768EDD1E4DACDB00133B6C /* Assets.xcassets in Resources */,
-				18768F671E4DAF3800133B6C /* 131.aac in Resources */,
+				34A35F6D20AF1D900030216A /* 111.aac in Resources */,
+				34A35F6B20AF196F0030216A /* 131.aac in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,7 +763,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = MY5GTD35UJ;
+				DEVELOPMENT_TEAM = U4BCBA6SZN;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/AudioPlayer/3rdparty/ffmpeg/include";
 				INFOPLIST_FILE = AudioPlayer/Info.plist;
@@ -769,7 +773,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/AudioPlayer/3rdparty/ffmpeg/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.phuket.tour.FFmpegDecoder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.phuket.tour.FFmpegDecoder0001;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -778,7 +782,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = MY5GTD35UJ;
+				DEVELOPMENT_TEAM = U4BCBA6SZN;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/AudioPlayer/3rdparty/ffmpeg/include";
 				INFOPLIST_FILE = AudioPlayer/Info.plist;
@@ -788,7 +792,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/AudioPlayer/3rdparty/ffmpeg/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.phuket.tour.FFmpegDecoder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.phuket.tour.FFmpegDecoder0001;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -862,6 +866,7 @@
 				18768EFC1E4DACDB00133B6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18768EFD1E4DACDB00133B6C /* Build configuration list for PBXNativeTarget "AudioPlayerTests" */ = {
 			isa = XCConfigurationList;
@@ -870,6 +875,7 @@
 				18768EFF1E4DACDB00133B6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18768F001E4DACDB00133B6C /* Build configuration list for PBXNativeTarget "AudioPlayerUITests" */ = {
 			isa = XCConfigurationList;
@@ -878,6 +884,7 @@
 				18768F021E4DACDB00133B6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

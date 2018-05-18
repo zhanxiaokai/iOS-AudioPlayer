@@ -152,6 +152,7 @@ void AccompanyDecoderController::destroyDecoderThread() {
 int AccompanyDecoderController::readSamples(short* samples, int size) {
 	int result = -1;
     int fillCuror = 0;
+    int sampleCursor = 0;
     while(fillCuror < size) {
         int samplePacketSize = 0;
         if(currentAccompanyPacket && currentAccompanyPacketCursor == currentAccompanyPacket->size) {
@@ -159,14 +160,15 @@ int AccompanyDecoderController::readSamples(short* samples, int size) {
             currentAccompanyPacket = NULL;
         }
         if(currentAccompanyPacket && currentAccompanyPacketCursor < currentAccompanyPacket->size) {
-            samplePacketSize = MIN(currentAccompanyPacket->size - currentAccompanyPacketCursor, size);
-            memcpy(samples, currentAccompanyPacket->buffer + currentAccompanyPacketCursor, samplePacketSize * 2);
+            int subSize = size - fillCuror;
+            samplePacketSize = MIN(currentAccompanyPacket->size - currentAccompanyPacketCursor, subSize);
+            memcpy(samples + fillCuror, currentAccompanyPacket->buffer + currentAccompanyPacketCursor, samplePacketSize * 2);
         } else {
             packetPool->getDecoderAccompanyPacket(&currentAccompanyPacket, true);
             currentAccompanyPacketCursor = 0;
             if (NULL != currentAccompanyPacket && currentAccompanyPacket->size > 0) {
-                samplePacketSize = size;
-                memcpy(samples, currentAccompanyPacket->buffer + currentAccompanyPacketCursor, samplePacketSize * 2);
+                samplePacketSize = size - fillCuror;
+                memcpy(samples + fillCuror, currentAccompanyPacket->buffer + currentAccompanyPacketCursor, samplePacketSize * 2);
             } else {
                 result = -2;
                 break;
@@ -178,9 +180,9 @@ int AccompanyDecoderController::readSamples(short* samples, int size) {
 	
 	if(packetPool->geDecoderAccompanyPacketQueueSize() < QUEUE_SIZE_MIN_THRESHOLD){
 		pthread_mutex_lock(&mLock);
-		if (result != -1) {
+//        if (result != -1) {
 			pthread_cond_signal(&mCondition);
-		}
+//        }
 		pthread_mutex_unlock (&mLock);
 	}
 	return result;

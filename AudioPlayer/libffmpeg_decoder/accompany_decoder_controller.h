@@ -9,7 +9,7 @@
 #define BITS_PER_CHANNEL		16
 #define BITS_PER_BYTE		8
 /** decode data to queue and queue size **/
-#define QUEUE_SIZE_MAX_THRESHOLD 25
+#define QUEUE_SIZE_MAX_THRESHOLD 50
 #define QUEUE_SIZE_MIN_THRESHOLD 20
 
 /**

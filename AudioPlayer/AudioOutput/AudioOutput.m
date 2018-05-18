@@ -50,6 +50,8 @@ static void CheckStatus(OSStatus status, NSString *message, BOOL fatal);
 
 @end
 
+const float SMAudioIOBufferDurationSmall = 0.0058f;
+
 @implementation AudioOutput
 
 - (id) initWithChannels:(NSInteger) channels sampleRate:(NSInteger) sampleRate bytesPerSample:(NSInteger) bytePerSample filleDataDelegate:(id<FillDataDelegate>) fillAudioDataDelegate;
@@ -57,9 +59,10 @@ static void CheckStatus(OSStatus status, NSString *message, BOOL fatal);
     
     self = [super init];
     if (self) {
-        [[ELAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord];
+        [[ELAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback];
         [[ELAudioSession sharedInstance] setPreferredSampleRate:sampleRate];
         [[ELAudioSession sharedInstance] setActive:YES];
+        [[ELAudioSession sharedInstance] setPreferredLatency:SMAudioIOBufferDurationSmall * 4];
         [[ELAudioSession sharedInstance] addRouteChangeListener];
         [self addAudioSessionInterruptedObserver];
         _outData = (SInt16 *)calloc(8192, sizeof(SInt16));
